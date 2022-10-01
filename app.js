@@ -272,8 +272,8 @@ const provider = new ethers.providers.JsonRpcProvider(rpc);
 const USDC = new ethers.Contract(address, ABI, provider);
 
 const main = async () => {
-    const block = await provider.getBlockNumber();
-  const transfers = await USDC.queryFilter("Transfer",block - 3000  );
+  const block = await provider.getBlockNumber();
+  const transfers = await USDC.queryFilter("Transfer", block - 3000);
   console.log(transfers);
 };
 
